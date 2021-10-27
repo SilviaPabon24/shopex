@@ -10,7 +10,7 @@ const connectionOptions: ConnectionOptions = {
     port: 5432,
     username: "wsuuioeptfnqeg",
     password: "d519b323fdadf5d6d2f435d04dc5d77daddc79a8c4d044efdcae520a0cdf3e4f",
-    database: "d6qabm2p48a4am" || "postgres",
+    database: "d6qabm2p48a4am",
     entities: [User],
     extra:{
         ssl:{
