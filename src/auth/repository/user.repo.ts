@@ -12,17 +12,11 @@ export class UserRepository extends Repository<User>{
     //Get user data
     async fetchUser(req: any, res: Response){
 
-        const Btoken = req.headers["authorization"]
-        if(typeof Btoken !== undefined){
-            req.token = Btoken;
-            jwt.verify(req.token,"mykey",async(error: any, authData : any) => {
-                if(error){
-                        res.send(error)
-                    }else{
-                        let data = await this.createQueryBuilder("user").select().getMany();
+        try{
+            let data = await this.createQueryBuilder("user").select().getMany();
                         res.send(data);
-                    }
-            });
+        }catch(error){
+            res.send(error);
         }
     }
     //Create a new user
