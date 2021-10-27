@@ -4,7 +4,7 @@ import { AuthController } from "./auth/auth_controller";
 const router = Router();
 
 //Default
-router.get("/user", (req,res) => {
+router.get("/", (req,res) => {
     res.send({
         message : "API IS WORKING",
     });
